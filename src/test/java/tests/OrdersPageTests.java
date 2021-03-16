@@ -28,7 +28,7 @@ public class OrdersPageTests extends TestBase {
         mainPage.login(ConfigHelper.getLogin(), ConfigHelper.getPassword());
         mainPage.chooseMFC(ConfigHelper.getMFC());
         mainPage.chooseRole("Аудитор");
-        $(byText("Заявители")).click();
+        $(byText("Заявители")).should(visible).click();
         $("#requestersSearch-body").should(Condition.visible);
     }
 
