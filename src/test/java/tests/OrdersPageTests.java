@@ -20,7 +20,9 @@ import static org.hamcrest.CoreMatchers.not;
 @Tag("web")
 @Feature("Orders page content")
 public class OrdersPageTests extends TestBase {
+
     @Test
+    @DisplayName("Open Requesters page")
     void enterRequestersPageTest(){
         open("");
         mainPage.login(ConfigHelper.getLogin(), ConfigHelper.getPassword());
@@ -31,6 +33,7 @@ public class OrdersPageTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Changing role from orders page")
     void changeRoleTest() {
         open("");
         mainPage.login(ConfigHelper.getLogin(), ConfigHelper.getPassword());
@@ -41,18 +44,6 @@ public class OrdersPageTests extends TestBase {
         $$(".x-box-inner .x-btn-inner").get(0).click();
         $("#auth").$(byText("Администратор")).should(visible);
         String consoleLogs = getConsoleLogs();
-    }
-
-    @Test
-    @DisplayName("Console log should not have any errors")
-    void consoleLogShouldNotHaveErrors() {
-        open("");
-        mainPage.login(ConfigHelper.getLogin(), ConfigHelper.getPassword());
-        mainPage.chooseMFC(ConfigHelper.getMFC());
-        mainPage.chooseRole("Аудитор");
-
-        String consoleLogs = getConsoleLogs();
-        assertThat(consoleLogs, not(containsString("SEVERE")));
     }
 
 }

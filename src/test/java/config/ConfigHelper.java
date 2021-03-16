@@ -1,6 +1,6 @@
 package config;
+
 import org.aeonbits.owner.ConfigFactory;
-import java.nio.charset.StandardCharsets;
 
 public class ConfigHelper {
     public static String getWebUrl() {
@@ -19,9 +19,6 @@ public class ConfigHelper {
         return getAuthConfig().MFC();
     }
 
-    public static String getRole() {
-        return getAuthConfig().Role();
-    }
 
     public static String getWebBrowser() {
         return getWebConfig().webBrowser();
