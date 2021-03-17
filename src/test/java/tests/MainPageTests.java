@@ -2,15 +2,18 @@ package tests;
 
 import com.codeborne.selenide.Condition;
 import config.ConfigHelper;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
-import io.qameta.allure.junit4.DisplayName;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 import static helpers.DriverHelper.getConsoleLogs;
+import static io.qameta.allure.Allure.step;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -19,6 +22,16 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @Feature("Main page content")
 public class MainPageTests extends TestBase {
 
+
+    @AllureId("1962")
+    @DisplayName("Digit MFC block on main page appear")
+    @Test
+    void openMainPaigeTest() {
+        step("Open main page",
+                () -> open(""));
+        step("Check \"Digit МФЦ\" block appear",
+                () -> $("#page_title").shouldHave(text("Digit МФЦ")));
+    }
 
     @Test
     @DisplayName("Login should be successful")
