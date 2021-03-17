@@ -1,8 +1,6 @@
 package Pages;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
-import config.ConfigHelper;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byName;
@@ -14,7 +12,7 @@ public class MainPage {
 //    private final static SelenideElement
 
 
-    public void login(String username, String password){
+    public void login(String username, String password) {
         $("#login").click();
         $(byText("Внутренняя авторизация")).should(Condition.visible);
         $(byName("username")).setValue(username);
@@ -23,19 +21,14 @@ public class MainPage {
 
     }
 
-    public void chooseMFC(String MFCname){
+    public void chooseMFC(String MFCname) {
         $$(".x-form-radio-group .x-form-cb-label").findBy(text(MFCname)).click();
         $$(".x-box-inner .x-btn-inner").get(0).click();
     }
 
-    public void chooseRole(String role){
+    public void chooseRole(String role) {
         $$(".x-form-radio-group .x-form-cb-label").findBy(text(role)).click();
         $$(".x-box-inner .x-btn-inner").get(1).click();
     }
-
-
-
-
-
 
 }
