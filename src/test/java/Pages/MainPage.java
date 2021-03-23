@@ -9,16 +9,12 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class MainPage {
-//    private final static SelenideElement
-
-
     public void login(String username, String password) {
         $("#login").click();
         $(byText("Внутренняя авторизация")).should(Condition.visible);
         $(byName("username")).setValue(username);
         $(byName("password")).setValue(password);
         $$(".x-box-inner .x-btn-inner").findBy(text("Вход")).click();
-
     }
 
     public void chooseMFC(String MFCname) {

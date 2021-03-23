@@ -8,15 +8,13 @@ import org.aeonbits.owner.Config;
         "classpath:config/auth.properties"
 })
 public interface AuthConfig extends Config {
-    @Key("Login")
-    String Login();
+    @Key("login")
+    String login();
 
-    @Key("Password")
-    String Password();
+    @Key("password")
+    String password();
 
     @Key("MFC")
     String MFC();
 
-    @Key("Role")
-    String Role();
 }

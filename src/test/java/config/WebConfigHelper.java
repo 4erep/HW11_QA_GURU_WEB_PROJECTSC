@@ -2,23 +2,10 @@ package config;
 
 import org.aeonbits.owner.ConfigFactory;
 
-public class ConfigHelper {
+public class WebConfigHelper {
     public static String getWebUrl() {
         return getWebConfig().webUrl();
     }
-
-    public static String getLogin() {
-        return getAuthConfig().Login();
-    }
-
-    public static String getPassword() {
-        return getAuthConfig().Password();
-    }
-
-    public static String getMFC() {
-        return getAuthConfig().MFC();
-    }
-
 
     public static String getWebBrowser() {
         return getWebConfig().webBrowser();
@@ -50,7 +37,4 @@ public class ConfigHelper {
         return ConfigFactory.newInstance().create(WebConfig.class, System.getProperties());
     }
 
-    private static AuthConfig getAuthConfig() {
-        return ConfigFactory.newInstance().create(AuthConfig.class, System.getProperties());
-    }
 }

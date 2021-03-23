@@ -5,12 +5,9 @@ plugins {
 }
 
 repositories {
-    maven {url = "https://dl.bintray.com/qameta/maven-unstable/"}
+    maven { url = "https://dl.bintray.com/qameta/maven-unstable/" }
     mavenCentral()
 }
-
-group 'app.pure'
-version '1.0'
 
 def allureVersion = "2.13.8",
     selenideVersion = "5.18.0",
@@ -26,7 +23,7 @@ allure {
 }
 
 dependencies {
-    testImplementation (
+    testImplementation(
             "org.aspectj:aspectjweaver:1.9.6",
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
@@ -42,7 +39,6 @@ dependencies {
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
-
 
 
 tasks.withType(Test) {

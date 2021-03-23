@@ -2,7 +2,7 @@ package helpers;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import config.ConfigHelper;
+import config.WebConfigHelper;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -14,23 +14,20 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 public class DriverHelper {
 
     public static void configureDriver() {
-
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
-        Configuration.browser = ConfigHelper.getWebBrowser();
+        Configuration.browser = WebConfigHelper.getWebBrowser();
         Configuration.startMaximized = true;
         Configuration.fastSetValue = true;
-        if (ConfigHelper.isRemoteWebDriver()) {
+        if (WebConfigHelper.isRemoteWebDriver()) {
             // config for Java + Selenide
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
             Configuration.browserCapabilities = capabilities;
-            Configuration.remote = ConfigHelper.getWebRemoteDriver();
-
+            Configuration.remote = WebConfigHelper.getWebRemoteDriver();
         }
-        Configuration.baseUrl = ConfigHelper.getWebUrl();
+        Configuration.baseUrl = WebConfigHelper.getWebUrl();
     }
-
 
     public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString().replace("selenoid", "");
