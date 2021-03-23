@@ -24,7 +24,7 @@ Java, JUnit5, Gradle, Selenide, Allure, Selenoid, Jenkins,Telegram reports
 ### - Отчет о прохождении тестов в Telegram
 ![image](https://user-images.githubusercontent.com/30008212/111575769-ade83600-87e1-11eb-93eb-290055cc875c.jpg)
 
-### - Видео пример о прохождении тестов
+### - Видео пример прохождения теста
 ![Video](https://user-images.githubusercontent.com/30008212/112182787-2f035b00-8c30-11eb-8349-2f11aecc540d.gif)
 
 
