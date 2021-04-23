@@ -12,7 +12,7 @@ import java.lang.annotation.*;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
-@LabelAnnotation(name = "jira")
+@LabelAnnotation(name = "jiraIssue")
 public @interface JiraIssue {
 
     String value();
