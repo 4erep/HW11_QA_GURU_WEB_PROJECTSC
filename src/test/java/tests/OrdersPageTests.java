@@ -1,5 +1,6 @@
 package tests;
 
+import allureAnnotations.JiraIssue;
 import com.codeborne.selenide.Condition;
 import config.AuthConfigHelper;
 import io.qameta.allure.Feature;
@@ -11,8 +12,8 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static helpers.DriverHelper.getConsoleLogs;
 
+@JiraIssue("QC3-24")
 @Tag("web")
 @Feature("Страница заявлений")
 public class OrdersPageTests extends TestBase {
@@ -39,6 +40,5 @@ public class OrdersPageTests extends TestBase {
         $$(".x-form-radio-group .x-form-cb-label").findBy(text("Администратор")).click();
         $(".x-box-inner .x-btn-inner").click();
         $("#auth").$(byText("Администратор")).should(visible);
-        String consoleLogs = getConsoleLogs();
     }
 }

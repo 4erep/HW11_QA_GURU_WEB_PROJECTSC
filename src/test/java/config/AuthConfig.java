@@ -16,5 +16,4 @@ public interface AuthConfig extends Config {
 
     @Key("MFC")
     String MFC();
-
 }

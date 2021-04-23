@@ -1,5 +1,6 @@
 package tests;
 
+import allureAnnotations.JiraIssue;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -13,6 +14,7 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@JiraIssue("QC3-24")
 @Tag("web")
 @Feature("Главная страница")
 public class MainPageTests extends TestBase {

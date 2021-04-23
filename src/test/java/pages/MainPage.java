@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import com.codeborne.selenide.Condition;
 
@@ -19,12 +19,12 @@ public class MainPage {
 
     public void chooseMFC(String MFCname) {
         $$(".x-form-radio-group .x-form-cb-label").findBy(text(MFCname)).click();
-        $$(".x-box-inner .x-btn-inner").get(0).click();
+        $(".x-box-inner .x-btn-inner").click();
     }
 
     public void chooseRole(String role) {
         $$(".x-form-radio-group .x-form-cb-label").findBy(text(role)).click();
-        $$(".x-box-inner .x-btn-inner").get(1).click();
+        $(".x-box-inner .x-btn-inner", 1).click();
     }
 
 }

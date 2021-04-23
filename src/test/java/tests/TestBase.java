@@ -1,8 +1,8 @@
 package tests;
 
-import Pages.MainPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import pages.MainPage;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static config.WebConfigHelper.isVideoOn;

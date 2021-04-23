@@ -26,7 +26,4 @@ public interface WebConfig extends Config {
     @Key("web.remote.driver.url")
     String webRemoteDriverUrl();
 
-
-
-
 }

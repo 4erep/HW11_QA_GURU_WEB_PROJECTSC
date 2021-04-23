@@ -1,5 +1,6 @@
 package tests;
 
+import allureAnnotations.JiraIssue;
 import com.codeborne.selenide.Condition;
 import config.AuthConfigHelper;
 import io.qameta.allure.Feature;
@@ -12,6 +13,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+@JiraIssue("QC3-24")
 @Tag("web")
 @Feature("Тесты на авторизацию")
 public class LoginTests extends TestBase {
