@@ -1,5 +1,6 @@
 # Tests for http://demo.sc.smart-consulting.ru/cpgu/
 ## Main page tests
+:white_check_mark: Это уже сделано    
 - Digit MFC block on main page appear
 - Login should be successful 
 - Choose MFC should be successful
